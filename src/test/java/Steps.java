@@ -4,17 +4,41 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
+import pages.CareersPage;
+import pages.MainPage;
+import pages.SearchPage;
 
-public class Steps extends BaseTest {
+import java.util.concurrent.TimeUnit;
+
+public class Steps  {
+
+    protected WebDriver driver;
+    protected MainPage mainPage;
+    protected CareersPage careersPage;
+    protected SearchPage searchPage;
 
     @Before
-    public void start(){
-        begin();
+    public void begin(){
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        mainPage = PageFactory.initElements(driver, MainPage.class);
+        careersPage = PageFactory.initElements(driver, CareersPage.class);
+        searchPage = PageFactory.initElements(driver, SearchPage.class);
     }
 
+
+
     @After
-    public void finish(){
-        end();
+    public void end(){
+    driver.quit();
     }
 
     @Given("I connect to epam.com")
