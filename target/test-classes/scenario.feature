@@ -11,16 +11,16 @@ Feature: to run tests
       | OUR WORK     | our-work     |
 
 
-  Scenario: Switch to Ukraine careers
+  Scenario: Switch to Russian
     Given I connect to epam.com
     When I click on 'language' button
-    And I click on 'Ukraine' button
+    And I click on 'Russian' button
     Then I check that page changed its careers region
 
   Scenario: Check search function
     Given I connect to epam.com
     When I click on 'search' button
-    And I enter 'RPA'
+    And I enter 'junior'
     Then I check that page changed to search result
 
   Scenario: Check button hover
@@ -28,10 +28,10 @@ Feature: to run tests
     When I point cursor to 'CONSULT'
     Then I check that it is hovered by text
 
-  Scenario: Check link to 'telescopeai'
+  Scenario: Check link to 'INFONGEN'
     Given I connect to epam.com
-    When I click on 'TELESCOPEAI' button
-    Then I check that 'https://www.telescopeai.com/' opens on a new page
+    When I click on 'INFONGEN' button
+    Then I check that 'https://www.infongen.com/' opens on a new page
 
   Scenario: Check 'Contact us'
     Given I connect to epam.com

@@ -56,7 +56,7 @@ public class MainPage extends BasePage{
     @FindBy(xpath = "//a[contains(text(),'Our Work')]")
     private WebElement ourWorkButton;
 
-    @FindBy(xpath = "//a[contains(@href,'https://www.telescopeai.com/')]")
+    @FindBy(xpath = "//a[contains(@href,'https://www.infongen.com/')]")
     private WebElement telescopeAiButton;
 
     public MainPage(WebDriver driver){
@@ -88,7 +88,7 @@ public class MainPage extends BasePage{
                 return contactUsButton;
             case "Blog":
                 return blogButton;
-            case "TELESCOPEAI":
+            case "INFONGEN":
                 return telescopeAiButton;
             case "SERVICES":
                 return servicesButton;

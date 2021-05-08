@@ -38,14 +38,14 @@ public class Steps extends BaseTest {
         careersPage.seeCareersPage();
     }
 
-    @And("I enter 'RPA'")
-    public void enterRPA() {
-        mainPage.enterSearchText("RPA");
+    @And("I enter 'junior'")
+    public void enterJunior() {
+        mainPage.enterSearchText("junior");
     }
 
     @Then("I check that page changed to search result")
-    public void changedToSearchRpa() throws InterruptedException {
-        searchPage.seeRpaSearch();
+    public void changedToSearchJunior() throws InterruptedException {
+        searchPage.seeJuniorSearch();
     }
 
     @When("I point cursor to {string}")

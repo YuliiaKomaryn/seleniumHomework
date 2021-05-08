@@ -9,7 +9,7 @@ public class SearchPage extends BasePage{
         url += "search";
     }
 
-    public void seeRpaSearch() throws InterruptedException{
-        redirectPage(url + "?q=RPA");
+    public void seeJuniorSearch() throws InterruptedException{
+        redirectPage(url + "?q=junior");
     }
 }
